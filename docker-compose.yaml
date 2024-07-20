@@ -1,0 +1,18 @@
+version: '3.7'
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb_saas_lending_container
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+      MONGO_INITDB_DATABASE: saas_lending_db
+    ports:
+      - '27017:27017'
+    volumes:
+      - ./database/mongodb_data:/data/db
+      - ./database/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js
+    logging:
+      options:
+        max-size: '10m'
+        max-file: '3'
