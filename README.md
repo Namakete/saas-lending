@@ -1,6 +1,6 @@
 # SAAS Lending Website
 
-...
+Development a landing page that provides information about SaaS technologies requires a deep understanding of web development and design.
 
 ## Tech Stack
 
