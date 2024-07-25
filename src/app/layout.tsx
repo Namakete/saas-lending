@@ -1,15 +1,21 @@
-import '@style/globals.scss'
+import { NavigationHeader } from '@component/navigations/NavigationMenu/navigation-header';
+import '@style/globals.css';
 
-const RootLayout = ({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) => {
+type RootLayoutProps = {
+  children: React.ReactNode;
+};
+
+const RootLayout = (props: RootLayoutProps) => {
+  const { children } = props;
+
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="background-gradient m-auto w-4/5 text-base">
+        <NavigationHeader />
+        {children}
+      </body>
     </html>
-  )
-}
+  );
+};
 
-export default RootLayout
+export default RootLayout;

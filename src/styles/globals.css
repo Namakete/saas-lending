@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.background-gradient {
+  background: radial-gradient(
+    circle 1100px at 20%,
+    #d8d6d6cb,
+    #ffffff,
+    #ffffff,
+    #f0ebeb,
+    #ffffff
+  );
+}
+
+.circle-indecator,
+.circle-indecator::before {
+  content: '';
+  margin: 15px;
+  inline-size: 7px;
+  block-size: 7px;
+  border-radius: 50%;
+  margin: 0 auto;
+  transition: all 0.3s ease-in-out;
+  background-color: #00ff00;
+}
+
+.circle-indecator::before {
+  animation: flash 1.5s infinite;
+  position: absolute;
+  background-color: #00ff00;
+}
+
+@-webkit-keyframes flash {
+  50% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+.logo-container {
+  inline-size: 40px;
+  block-size: 40px;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+
+.logo-image {
+  inline-size: 100%;
+  block-size: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.line-clamp {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}

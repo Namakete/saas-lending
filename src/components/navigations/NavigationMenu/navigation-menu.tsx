@@ -1,27 +1,30 @@
-import Link from 'next/link'
-import { NavigationItemType } from '@/src/shared/types/navigation-item.type'
+'use client';
 
-interface NavigationMenuProps {
-  items?: NavigationItemType[]
-}
+import { NavigationItemType } from '@/src/shared/types/navigation-item.type';
+import { cn } from '@shared/utils/cn';
+import Link from 'next/link';
+
+type NavigationMenuProps = {
+  items?: NavigationItemType[];
+  className?: string;
+};
 
 export const NavigationMenu = (props: NavigationMenuProps) => {
-  const { items } = props
+  const { items, className } = props;
 
   return (
-    <>
-      {items?.length ? (
-        <nav>
-          {items?.map(
-            (item, index) =>
-              item.href && (
-                <Link key={index} href={item.href}>
-                  {item.title}
-                </Link>
-              ),
-          )}
-        </nav>
-      ) : null}
-    </>
-  )
-}
+    <nav className={cn('flex flex-row gap-4', className)}>
+      {items?.map((item, index) =>
+        item.href ? (
+          <Link
+            key={index}
+            href={item.href}
+            className={cn(item.disabled && 'cursor-not-allowed opacity-80')}
+          >
+            {item.title}
+          </Link>
+        ) : null,
+      )}
+    </nav>
+  );
+};

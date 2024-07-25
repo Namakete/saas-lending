@@ -1,6 +1,6 @@
-export interface NavigationItemType {
-  title: string
-  href?: string
-  disabled?: boolean
-  external?: boolean
-}
+export type NavigationItemType = {
+  title: string;
+  href?: string;
+  disabled?: boolean;
+  external?: boolean;
+};

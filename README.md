@@ -20,7 +20,7 @@
 > Make sure you have [Node.js](https://nodejs.org/en) installed on your machine
 
 1. Install Dependencies `npm install`
-2. Environment variables: `touch .env`
+2. Environment variables: `touch .env.local`
 
    ```bash
    DATABASE_URL="mongodb://<user>:<password>@localhost:<port>/<database>"
@@ -37,3 +37,4 @@
 2. Opens interactive shell in Docker container `docker exec -it mongodb_saas_lending_container bash`
 3. Displays MongoDB server version accurately `mongod --version`
 4. Connects to MongoDB using root credentials `mongosh -u <user> -p <password>`
+5. Create basedata `d`
